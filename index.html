@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Nihongo Kids</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-banner">
+        <h1>Happy Nihongo Kids</h1>
+        <p>Type an English word and discover Japanese with pictures and sound!</p>
+        <div class="score-strip">
+          <div class="chip chip-points">Points: <span id="pointsValue">0</span></div>
+          <div class="chip chip-stars">Stars: <span id="starsValue">0</span></div>
+          <div class="chip chip-progress">Words Learned: <span id="learnedValue">0</span></div>
+        </div>
+      </header>
+
+      <section class="panel input-panel">
+        <div class="row">
+          <label for="wordInput" class="big-label">English Word</label>
+          <button id="voiceBtn" class="icon-btn" title="Voice input">🎤</button>
+        </div>
+        <div class="input-wrap">
+          <input id="wordInput" type="text" placeholder="Try: dog, apple, blue..." />
+          <button id="translateBtn" class="primary-btn">Translate</button>
+        </div>
+        <div class="quick-picks" id="quickPicks"></div>
+        <div class="category-row">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="all">All</option>
+            <option value="animals">Animals</option>
+            <option value="food">Food</option>
+            <option value="colors">Colors</option>
+            <option value="school">School</option>
+            <option value="nature">Nature</option>
+          </select>
+          <label class="toggle-wrap">
+            <input id="multiImageToggle" type="checkbox" checked />
+            <span>Show 3 pictures</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel result-panel" id="resultPanel">
+        <h2 id="englishWord">-</h2>
+        <div class="jp-block">
+          <div>
+            <small>Hiragana / Katakana</small>
+            <p id="jpKana">-</p>
+          </div>
+          <div>
+            <small>Romaji</small>
+            <p id="jpRomaji">-</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="listenBtn" class="listen-btn">🔊 Listen</button>
+          <button id="flashcardAddBtn" class="ghost-btn">⭐ Add to Flashcards</button>
+        </div>
+        <div class="image-gallery" id="imageGallery"></div>
+      </section>
+
+      <section class="panel word-day-panel">
+        <h3>🌟 Word of the Day</h3>
+        <p><strong id="dayEnglish">-</strong> → <span id="dayJapanese">-</span> (<span id="dayRomaji">-</span>)</p>
+      </section>
+
+      <section class="panel flashcard-panel">
+        <h3>🃏 Flashcards</h3>
+        <div class="flashcard" id="flashcard"></div>
+        <div class="actions">
+          <button id="prevCardBtn" class="ghost-btn">⬅ Prev</button>
+          <button id="flipCardBtn" class="primary-btn">Flip</button>
+          <button id="nextCardBtn" class="ghost-btn">Next ➡</button>
+        </div>
+      </section>
+
+      <section class="panel quiz-panel">
+        <h3>🎮 Picture Quiz</h3>
+        <p>Tap the correct Japanese word for the picture.</p>
+        <div class="quiz-illustration" id="quizIllustration"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <p id="quizFeedback"></p>
+      </section>
+
+      <section class="panel badge-panel">
+        <h3>🏅 Badges</h3>
+        <div id="badges"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
